@@ -44,7 +44,7 @@ true
 
 ### Testing ###
 
-Dropkick uses (minitest)[https://github.com/seattlerb/minitest]. Run `bundle exec rake test` to invoke the tests.
+Dropkick uses [minitest](https://github.com/seattlerb/minitest). Run `bundle exec rake test` to invoke the tests.
 
 ```
  $ bundle exec rake test
