@@ -17,12 +17,8 @@ describe Command do
     result.successful?.must_equal true
   end
 
-  it 'must handle commands that are not found' do
-    result = Command.secure_exec('foobarbaz')
-    result.wont_be_nil
-    result.stderr.wont_equal ""
-    result.stdout.must_equal ""
-    result.successful?.must_equal false
+  it 'must allow exceptions to bubble up higher' do
+    proc { Command.secure_exec('foobarbaz') }.must_raise Errno::ENOENT 
   end
   
   it 'must handle commands that have runtime errors' do
